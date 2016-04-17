@@ -12,14 +12,10 @@ function cover(){
 
 
 function shuffle(){
-	var picAddresses = [
-							["../pics/car.jpg",
+	var picAddresses = 		["../pics/car.jpg",
 							"../pics/cat.jpg",
 							"../pics/house.jpg",
-							"../pics/owl.jpg"],
-							["0","0","0","0"]
-							
-	]
+							"../pics/owl.jpg"]
 	
 	var randomnumber;
 	var id = "td";
@@ -27,32 +23,42 @@ function shuffle(){
 	//Ich befülle ein Array, das ich danach durchlaufe
 	// ich muss bei jeder Befüllung darauf achten, dass der zu Füllende Inhalt nicht in mehr als einem 
 	// zu füllenden Feld ist.
-		
+	var filler = [["","","","","","","",""],["","","","","","","",""]];
 	
-	for(var i = 1; i < 9; i++){
+	for(var i = 0; i < 8; i++){
 
 		randomnumber = Math.floor(Math.random()*4);	
 
-		if (picAddresses[1][randomnumber] = "0" ) {			
-			id = id + i;
-			document.getElementById(id).setAttribute('background', picAddresses[0][randomnumber]);	
-			id = "td";		
-			picAddresses[1][randomnumber] = "1";
-		};
 		
+			id = id + i;
+			//document.getElementById(id).setAttribute('background', picAddresses[0][randomnumber]);	
+			filler[0][i] = picAddresses[randomnumber];
+			filler[1][i] = "1";
+			id = "td";		
+			//picAddresses[1][randomnumber] = "1";		
 	}		
-	
+	//alert(nurZweiMalVorhanden(1,picAddresses));	
+
 }
 
 function nurZweiMalVorhanden(wert,arrayMitWerten){
 	var erg = false;
+	var anzahl = 0;
 
 	for (var i = 1; i < arrayMitWerten.length; i++) {
-		
+
+		if (arrayMitWerten[0][i] == wert) {
+			anzahl = anzahl + 1;
+		}
 
 
-		return x;
 	};
+	if (anzahl < 2) {
+		erg = true;
+	}
+
+	return erg;
+
 }
 
 

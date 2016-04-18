@@ -1,3 +1,21 @@
+window.onload = start;
+var filler = [["","","","","","","",""],["","","","","","","",""]];
+
+function start(){
+
+	
+	filler = shuffle(filler);
+	cover();
+
+
+}
+
+function myFunction(event) { 
+	var id = event.target.id;
+	
+}
+
+
 function cover(){
 	document.getElementById("td1").setAttribute('background', '../pics/cover.png');
 	document.getElementById("td2").setAttribute('background', '../pics/cover.png');
@@ -11,54 +29,83 @@ function cover(){
 }
 
 
-function shuffle(){
+function shuffle(filler){
 	var picAddresses = 		["../pics/car.jpg",
 							"../pics/cat.jpg",
 							"../pics/house.jpg",
 							"../pics/owl.jpg"]
 	
 	var randomnumber;
-	var id = "td";
+
 	
 	//Ich befülle ein Array, das ich danach durchlaufe
 	// ich muss bei jeder Befüllung darauf achten, dass der zu Füllende Inhalt nicht in mehr als einem 
 	// zu füllenden Feld ist.
-	var filler = [["","","","","","","",""],["","","","","","","",""]];
 	
-	for(var i = 0; i < 8; i++){
+	
+	var i = 0;
+	while(!(istAllesVoll(filler))){
 
-		randomnumber = Math.floor(Math.random()*4);	
-
-		
-			id = id + i;
+		randomnumber = Math.floor(Math.random()*4);			
+			//id = id + i;
 			//document.getElementById(id).setAttribute('background', picAddresses[0][randomnumber]);	
-			filler[0][i] = picAddresses[randomnumber];
-			filler[1][i] = "1";
-			id = "td";		
-			//picAddresses[1][randomnumber] = "1";		
-	}		
-	//alert(nurZweiMalVorhanden(1,picAddresses));	
 
+			if (nurZweiMalVorhanden(picAddresses[randomnumber], filler)) {
+				filler[0][i] = picAddresses[randomnumber];
+				i++;
+			};
+			
+			//id = "td";		
+			//picAddresses[1][randomnumber] = "1";	
+	
+	}		
+	
+
+	//fuelle Werte in Tabelle
+	var td;
+	var zaehler = 1;
+	for (var i = 0; i < 8; i++) {
+		td = "td";
+		td = td + zaehler;
+		document.getElementById(td).setAttribute('background', filler[0][i]);	
+		zaehler = zaehler + 1;
+	}
+
+	return filler;
 }
+
+
 
 function nurZweiMalVorhanden(wert,arrayMitWerten){
 	var erg = false;
 	var anzahl = 0;
 
-	for (var i = 1; i < arrayMitWerten.length; i++) {
-
+	for (var i = 0; i < 7; i++) {
 		if (arrayMitWerten[0][i] == wert) {
 			anzahl = anzahl + 1;
 		}
-
-
 	};
-	if (anzahl < 2) {
+	if (anzahl <= 1) {
 		erg = true;
 	}
 
 	return erg;
 
+}
+
+function istAllesVoll(arrayMitWerten){
+	var erg = false;
+	var anzahl = 0;
+	for (var i = 0; i < 8; i++) {
+		if (arrayMitWerten[0][i] != "") {
+			anzahl = anzahl + 1;
+		}
+	}
+	if (anzahl == 8) {
+		erg = true
+	}
+
+	return erg;
 }
 
 

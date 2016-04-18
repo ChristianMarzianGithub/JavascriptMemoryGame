@@ -12,7 +12,31 @@ function start(){
 
 function myFunction(event) { 
 	var id = event.target.id;
-	
+	if (id == "td1") {
+		document.getElementById("td1").setAttribute('background', filler[0][0]);
+	}
+	if (id == "td2") {
+		document.getElementById("td2").setAttribute('background', filler[0][1]);
+	}
+	if (id == "td3") {
+		document.getElementById("td3").setAttribute('background', filler[0][2]);
+	}
+	if (id == "td4") {
+		document.getElementById("td4").setAttribute('background', filler[0][3]);
+	}
+	if (id == "td5") {
+		document.getElementById("td5").setAttribute('background', filler[0][4]);
+	}
+	if (id == "td6") {
+		document.getElementById("td6").setAttribute('background', filler[0][5]);
+	}
+	if (id == "td7") {
+		document.getElementById("td7").setAttribute('background', filler[0][6]);
+	}
+	if (id == "td8") {
+		document.getElementById("td8").setAttribute('background', filler[0][7]);
+	}
+
 }
 
 

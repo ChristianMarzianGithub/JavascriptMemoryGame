@@ -1,42 +1,100 @@
 window.onload = start;
 var filler = [["","","","","","","",""],["","","","","","","",""]];
+var aufdeckZaehler = 1;
 
 function start(){
 
 	
 	filler = shuffle(filler);
-	cover();
-
-
 }
 
 function myFunction(event) { 
 	var id = event.target.id;
-	if (id == "td1") {
-		document.getElementById("td1").setAttribute('background', filler[0][0]);
-	}
-	if (id == "td2") {
-		document.getElementById("td2").setAttribute('background', filler[0][1]);
-	}
-	if (id == "td3") {
-		document.getElementById("td3").setAttribute('background', filler[0][2]);
-	}
-	if (id == "td4") {
-		document.getElementById("td4").setAttribute('background', filler[0][3]);
-	}
-	if (id == "td5") {
-		document.getElementById("td5").setAttribute('background', filler[0][4]);
-	}
-	if (id == "td6") {
-		document.getElementById("td6").setAttribute('background', filler[0][5]);
-	}
-	if (id == "td7") {
-		document.getElementById("td7").setAttribute('background', filler[0][6]);
-	}
-	if (id == "td8") {
-		document.getElementById("td8").setAttribute('background', filler[0][7]);
+	if (id == "td1" ) {
+		aufdeckZaehler = aufdeckZaehler + 1;
+		//wenn es bereits verdeckt ist
+		if (document.getElementById("td1").getAttribute('background') == '../pics/cover.png') {
+			document.getElementById("td1").setAttribute('background',filler[0][0]);
+		}else{
+			document.getElementById("td1").setAttribute('background','../pics/cover.png' );
+		}		
 	}
 
+	if (id == "td2" ) {
+		aufdeckZaehler = aufdeckZaehler + 1;
+		//wenn es bereits verdeckt ist
+		if (document.getElementById("td2").getAttribute('background') == '../pics/cover.png') {
+			document.getElementById("td2").setAttribute('background',filler[0][1]);
+		}else{
+			document.getElementById("td2").setAttribute('background','../pics/cover.png' );
+		}
+		
+	}
+
+	if (id == "td3" ) {
+		aufdeckZaehler = aufdeckZaehler + 1;
+		//wenn es bereits verdeckt ist
+		if (document.getElementById("td3").getAttribute('background') == '../pics/cover.png') {
+			document.getElementById("td3").setAttribute('background',filler[0][2]);
+		}else{
+			document.getElementById("td3").setAttribute('background','../pics/cover.png' );
+		}
+		
+	}
+
+	if (id == "td4" ) {
+		aufdeckZaehler = aufdeckZaehler + 1;
+		//wenn es bereits verdeckt ist
+		if (document.getElementById("td4").getAttribute('background') == '../pics/cover.png') {
+			document.getElementById("td4").setAttribute('background',filler[0][3]);
+		}else{
+			document.getElementById("td4").setAttribute('background','../pics/cover.png' );
+		}
+		
+	}
+
+	if (id == "td5" ) {
+		aufdeckZaehler = aufdeckZaehler + 1;
+		//wenn es bereits verdeckt ist
+		if (document.getElementById("td5").getAttribute('background') == '../pics/cover.png') {
+			document.getElementById("td5").setAttribute('background',filler[0][4]);
+		}else{
+			document.getElementById("td5").setAttribute('background','../pics/cover.png' );
+		}
+		
+	}
+
+	if (id == "td6" ) {
+		aufdeckZaehler = aufdeckZaehler + 1;
+		//wenn es bereits verdeckt ist
+		if (document.getElementById("td6").getAttribute('background') == '../pics/cover.png') {
+			document.getElementById("td6").setAttribute('background',filler[0][5]);
+		}else{
+			document.getElementById("td6").setAttribute('background','../pics/cover.png' );
+		}
+		
+	}
+
+	if (id == "td7" ) {
+		aufdeckZaehler = aufdeckZaehler + 1;
+		//wenn es bereits verdeckt ist
+		if (document.getElementById("td7").getAttribute('background') == '../pics/cover.png') {
+			document.getElementById("td7").setAttribute('background',filler[0][6]);
+		}else{
+			document.getElementById("td7").setAttribute('background','../pics/cover.png' );
+		}
+		
+	}
+
+	if (id == "td8" ) {
+		aufdeckZaehler = aufdeckZaehler + 1;
+		//wenn es bereits verdeckt ist
+		if (document.getElementById("td8").getAttribute('background') == '../pics/cover.png') {
+			document.getElementById("td8").setAttribute('background',filler[0][7]);
+		}else{
+			document.getElementById("td8").setAttribute('background','../pics/cover.png' );
+		}		
+	}
 }
 
 
@@ -51,6 +109,9 @@ function cover(){
 	document.getElementById("td7").setAttribute('background', '../pics/cover.png');
 	document.getElementById("td8").setAttribute('background', '../pics/cover.png');
 }
+
+
+
 
 
 function shuffle(filler){
@@ -81,7 +142,6 @@ function shuffle(filler){
 			
 			//id = "td";		
 			//picAddresses[1][randomnumber] = "1";	
-	
 	}		
 	
 
@@ -94,7 +154,6 @@ function shuffle(filler){
 		document.getElementById(td).setAttribute('background', filler[0][i]);	
 		zaehler = zaehler + 1;
 	}
-
 	return filler;
 }
 
@@ -131,10 +190,3 @@ function istAllesVoll(arrayMitWerten){
 
 	return erg;
 }
-
-
-
-
-
-
-

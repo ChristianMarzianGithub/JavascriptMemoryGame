@@ -1,6 +1,8 @@
-window.onload = start;
+var aufgedeckteBilder = 8;
 var filler = [["","","","","","","",""],["","","","","","","",""]];
-var aufdeckZaehler = 1;
+var idVorher = "";
+var id = "";
+window.onload = start;
 
 function start(){
 
@@ -9,94 +11,122 @@ function start(){
 }
 
 function myFunction(event) { 
-	var id = event.target.id;
-	if (id == "td1" ) {
-		aufdeckZaehler = aufdeckZaehler + 1;
-		//wenn es bereits verdeckt ist
-		if (document.getElementById("td1").getAttribute('background') == '../pics/cover.png') {
-			document.getElementById("td1").setAttribute('background',filler[0][0]);
-		}else{
-			document.getElementById("td1").setAttribute('background','../pics/cover.png' );
-		}		
-	}
-
-	if (id == "td2" ) {
-		aufdeckZaehler = aufdeckZaehler + 1;
-		//wenn es bereits verdeckt ist
-		if (document.getElementById("td2").getAttribute('background') == '../pics/cover.png') {
-			document.getElementById("td2").setAttribute('background',filler[0][1]);
-		}else{
-			document.getElementById("td2").setAttribute('background','../pics/cover.png' );
-		}
+	id = event.target.id;
+	
 		
-	}
+				if (id == "td1" ) {
+				//wenn es bereits verdeckt ist
+				if (document.getElementById("td1").getAttribute('background') == '../pics/cover.png') {
+					document.getElementById("td1").setAttribute('background',filler[0][0]);
+					aufgedeckteBilder = aufgedeckteBilder + 1;
+				}else{
+					document.getElementById("td1").setAttribute('background','../pics/cover.png' );
+					aufgedeckteBilder = aufgedeckteBilder - 1;
+					}		
+				}
 
-	if (id == "td3" ) {
-		aufdeckZaehler = aufdeckZaehler + 1;
-		//wenn es bereits verdeckt ist
-		if (document.getElementById("td3").getAttribute('background') == '../pics/cover.png') {
-			document.getElementById("td3").setAttribute('background',filler[0][2]);
-		}else{
-			document.getElementById("td3").setAttribute('background','../pics/cover.png' );
-		}
-		
-	}
+			if (id == "td2" ) {
+				//wenn es bereits verdeckt ist
+				if (document.getElementById("td2").getAttribute('background') == '../pics/cover.png') {
+					document.getElementById("td2").setAttribute('background',filler[0][1]);
+					aufgedeckteBilder = aufgedeckteBilder + 1;
+				}else{
+					document.getElementById("td2").setAttribute('background','../pics/cover.png' );
+					aufgedeckteBilder = aufgedeckteBilder - 1;
+				}		
+			}
 
-	if (id == "td4" ) {
-		aufdeckZaehler = aufdeckZaehler + 1;
-		//wenn es bereits verdeckt ist
-		if (document.getElementById("td4").getAttribute('background') == '../pics/cover.png') {
-			document.getElementById("td4").setAttribute('background',filler[0][3]);
-		}else{
-			document.getElementById("td4").setAttribute('background','../pics/cover.png' );
-		}
-		
-	}
+			if (id == "td3" ) {
+				//wenn es bereits verdeckt ist
+				if (document.getElementById("td3").getAttribute('background') == '../pics/cover.png') {
+					document.getElementById("td3").setAttribute('background',filler[0][2]);
+					aufgedeckteBilder = aufgedeckteBilder + 1;
+				}else{
+					document.getElementById("td3").setAttribute('background','../pics/cover.png' );
+					aufgedeckteBilder = aufgedeckteBilder - 1;
+				}
+			}
 
-	if (id == "td5" ) {
-		aufdeckZaehler = aufdeckZaehler + 1;
-		//wenn es bereits verdeckt ist
-		if (document.getElementById("td5").getAttribute('background') == '../pics/cover.png') {
-			document.getElementById("td5").setAttribute('background',filler[0][4]);
-		}else{
-			document.getElementById("td5").setAttribute('background','../pics/cover.png' );
-		}
-		
-	}
+			if (id == "td4" ) {
+				//wenn es bereits verdeckt ist
+				if (document.getElementById("td4").getAttribute('background') == '../pics/cover.png') {
+					document.getElementById("td4").setAttribute('background',filler[0][3]);
+					aufgedeckteBilder = aufgedeckteBilder + 1;
+				}else{
+					document.getElementById("td4").setAttribute('background','../pics/cover.png' );
+					aufgedeckteBilder = aufgedeckteBilder - 1;
+				}
+				
+			}
 
-	if (id == "td6" ) {
-		aufdeckZaehler = aufdeckZaehler + 1;
-		//wenn es bereits verdeckt ist
-		if (document.getElementById("td6").getAttribute('background') == '../pics/cover.png') {
-			document.getElementById("td6").setAttribute('background',filler[0][5]);
-		}else{
-			document.getElementById("td6").setAttribute('background','../pics/cover.png' );
-		}
-		
-	}
+			if (id == "td5" ) {
+				//wenn es bereits verdeckt ist
+				if (document.getElementById("td5").getAttribute('background') == '../pics/cover.png') {
+					document.getElementById("td5").setAttribute('background',filler[0][4]);
+					aufgedeckteBilder = aufgedeckteBilder + 1;
+				}else{
+					document.getElementById("td5").setAttribute('background','../pics/cover.png' );
+					aufgedeckteBilder = aufgedeckteBilder - 1;
+				}			
+			}
 
-	if (id == "td7" ) {
-		aufdeckZaehler = aufdeckZaehler + 1;
-		//wenn es bereits verdeckt ist
-		if (document.getElementById("td7").getAttribute('background') == '../pics/cover.png') {
-			document.getElementById("td7").setAttribute('background',filler[0][6]);
-		}else{
-			document.getElementById("td7").setAttribute('background','../pics/cover.png' );
-		}
-		
-	}
+			if (id == "td6" ) {
+				//wenn es bereits verdeckt ist
+				if (document.getElementById("td6").getAttribute('background') == '../pics/cover.png') {
+					document.getElementById("td6").setAttribute('background',filler[0][5]);
+					aufgedeckteBilder = aufgedeckteBilder + 1;
+				}else{
+					document.getElementById("td6").setAttribute('background','../pics/cover.png' );
+					aufgedeckteBilder = aufgedeckteBilder - 1;
+				}				
+			}
 
-	if (id == "td8" ) {
-		aufdeckZaehler = aufdeckZaehler + 1;
-		//wenn es bereits verdeckt ist
-		if (document.getElementById("td8").getAttribute('background') == '../pics/cover.png') {
-			document.getElementById("td8").setAttribute('background',filler[0][7]);
-		}else{
-			document.getElementById("td8").setAttribute('background','../pics/cover.png' );
-		}		
-	}
+			if (id == "td7" ) {
+				//wenn es bereits verdeckt ist
+				if (document.getElementById("td7").getAttribute('background') == '../pics/cover.png') {
+					document.getElementById("td7").setAttribute('background',filler[0][6]);
+					aufgedeckteBilder = aufgedeckteBilder + 1;
+				}else{
+					document.getElementById("td7").setAttribute('background','../pics/cover.png' );
+					aufgedeckteBilder = aufgedeckteBilder - 1;
+				}			
+			}
+
+			if (id == "td8" ) {
+				//wenn es bereits verdeckt ist
+				if (document.getElementById("td8").getAttribute('background') == '../pics/cover.png') {
+					document.getElementById("td8").setAttribute('background',filler[0][7]);
+					aufgedeckteBilder = aufgedeckteBilder + 1;
+				}else{
+					document.getElementById("td8").setAttribute('background','../pics/cover.png' );
+					aufgedeckteBilder = aufgedeckteBilder - 1;
+				}		
+			
+			}
+
+	alert("id = " + id + "\nidVorher = " + idVorher);
+	pruefeAufMatch(id,idVorher);	
+	idVorher = id;	
 }
 
+function pruefeAufMatch(eins, zwei){
+		if (eins != "" && zwei != "") {
+				if (eins == zwei )
+			{
+				alert("it's a match !");
+			}else{
+				setTimeout(cover(), 2000);
+			}			
+		}		
+}
+
+function verdeckeNurBestimmteFelder(arrayMitWerten){
+	for (var i = 0; i < arrayMitWerten.length; i++) {
+		
+
+		arrayMitWerten[i]
+	}
+}
 
 function cover(){
 	document.getElementById("td1").setAttribute('background', '../pics/cover.png');
@@ -108,6 +138,9 @@ function cover(){
 	document.getElementById("td6").setAttribute('background', '../pics/cover.png');
 	document.getElementById("td7").setAttribute('background', '../pics/cover.png');
 	document.getElementById("td8").setAttribute('background', '../pics/cover.png');
+	aufgedeckteBilder = 0;
+	id = " ";
+	id2 = " ";
 }
 
 
